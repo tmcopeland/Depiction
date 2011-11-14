@@ -4,7 +4,6 @@
 
 
 uidir = $(datadir)/depiction/ui
-ui_DATA = depiction.ui
 
 
 AM_CPPFLAGS = \
@@ -26,7 +25,9 @@ depiction_SOURCES = \
 	AboutDialog.cc \
 	AboutDialog.h \
 	MenuBar.cc \
-	MenuBar.h
+	MenuBar.h \
+	MainToolbar.cc \
+	MainToolbar.h
 
 depiction_LDFLAGS = -static
 

@@ -33,6 +33,7 @@
 
 #include "AboutDialog.h"
 #include "MenuBar.h"
+#include "MainToolbar.h"
 
 class Depiction : public Gtk::Window
 {
@@ -40,7 +41,8 @@ public:
 	Depiction ();
 private:
 protected:
-	Gtk::Grid mainGrid;
+	Gtk::Box mainBox;
+	//MainToolbar mainToolbar;
 };
 
 #endif // _DEPICTION_APP_H

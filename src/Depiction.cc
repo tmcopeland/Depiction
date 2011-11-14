@@ -21,18 +21,19 @@
 
 #include "Depiction.h"
 
-Depiction::Depiction ()
+Depiction::Depiction () :
+	mainBox (Gtk::ORIENTATION_VERTICAL, 1)
 {
 	set_title ("Depiction Photo Manager");
-	set_default_size (400, 600);
+	set_default_size (960, 720);
 	set_position (Gtk::WIN_POS_CENTER);
-
-	//signal_close().connect (Gtk::main_quit);
 	
-	MenuBar mainMenuBar;
-	mainGrid.attach (mainMenuBar, 0, 0, 1, 1);
+	MenuBar* mainMenuBar = Gtk::manage (new MenuBar ());
+	MainToolbar* mainToolbar = Gtk::manage (new MainToolbar ());
+	mainBox.pack_start (*mainMenuBar, false, true, 1);
+	mainBox.pack_start (*mainToolbar, false, true, 1);
 
-	add (mainGrid);
+	add (mainBox);
 
-	show_all ();
+	show_all_children (true);
 }
